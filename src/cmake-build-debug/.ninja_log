@@ -1,0 +1,8 @@
+# ninja log v5
+1	631	1722271099931095626	CMakeFiles/cdn.dir/main.cpp.o	6a09e99d41522945
+0	858	1722191159318135095	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	d91f44f569a9ac2f
+1	1236	1722191159713815839	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	38b85e73ecea23ae
+1236	1346	1722191159831096000	lib/libgtestd.a	66bc469ad9e163d8
+1	502	1722285848741452815	CMakeFiles/cdn.dir/radix_tree.cpp.o	3a37ad0e865949a0
+1346	1374	1722191159858915000	lib/libgmockd.a	ffdb71b67e9bee27
+1	283	1722271283210666717	CMakeFiles/cdn.dir/RadixTree.cpp.o	a271cac633963d9a

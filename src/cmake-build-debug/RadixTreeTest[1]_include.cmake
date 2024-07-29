@@ -1,0 +1,5 @@
+if(EXISTS "/Users/simonastrecanska/Desktop/cdn/cmake-build-debug/RadixTreeTest[1]_tests.cmake")
+  include("/Users/simonastrecanska/Desktop/cdn/cmake-build-debug/RadixTreeTest[1]_tests.cmake")
+else()
+  add_test(RadixTreeTest_NOT_BUILT RadixTreeTest_NOT_BUILT)
+endif()
