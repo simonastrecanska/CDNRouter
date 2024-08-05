@@ -15,7 +15,7 @@ RadixTree::~RadixTree() {
  * @param popId The PoP ID associated with the prefix.
  */
 void RadixTree::insert(const std::string& prefix, int prefixLength, int popId) {
-    std::string binaryPrefix = toBinaryString(prefix).substr(0, prefixLength);
+    std::string binaryPrefix = toBinaryString(prefix).substr(0, prefixLength); 
     Node* current = root;
     for (std::string::size_type i = 0; i < binaryPrefix.size(); ++i) {
         char bit = binaryPrefix[i];
@@ -24,7 +24,7 @@ void RadixTree::insert(const std::string& prefix, int prefixLength, int popId) {
         }
         current = current->children[bit];
     }
-    current->popId = popId;
+    current->popId = popId; 
 }
 
 /**
@@ -35,13 +35,13 @@ void RadixTree::insert(const std::string& prefix, int prefixLength, int popId) {
 std::pair<int, int> RadixTree::find(const std::string& ipv6) {
     std::string binaryAddress = toBinaryString(ipv6);
     Node* current = root;
-    Node* bestMatch = nullptr;
+    Node* bestMatch = NULL;
     int bestMatchLength = 0;
 
     for (std::string::size_type i = 0; i < binaryAddress.size(); ++i) {
         char bit = binaryAddress[i];
         if (current->children.find(bit) == current->children.end()) {
-            break;
+            break; 
         }
         current = current->children[bit];
         if (current->popId != -1) {
@@ -61,10 +61,10 @@ std::pair<int, int> RadixTree::find(const std::string& ipv6) {
  * @param node The current node being deleted.
  */
 void RadixTree::deleteTree(Node* node) {
-    for (auto & it : node->children) {
-        deleteTree(it.second);
+    for (std::unordered_map<char, Node*>::iterator it = node->children.begin(); it != node->children.end(); ++it) {
+        deleteTree(it->second); 
     }
-    delete node;
+    delete node; 
 }
 
 /**
@@ -75,12 +75,12 @@ void RadixTree::deleteTree(Node* node) {
 std::string RadixTree::toBinaryString(const std::string& ipv6) {
     struct in6_addr addr;
     if (inet_pton(AF_INET6, ipv6.c_str(), &addr) != 1) {
-        throw std::invalid_argument("Invalid IPv6 address");
+        throw std::invalid_argument("Invalid IPv6 address"); 
     }
     std::bitset<128> bits;
     for (int i = 0; i < 16; ++i) {
         bits <<= 8;
         bits |= addr.s6_addr[i];
     }
-    return bits.to_string();
+    return bits.to_string(); 
 }
