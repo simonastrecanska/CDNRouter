@@ -41,7 +41,6 @@ void runTests() {
     assert(result.first == -1 && result.second == -1);
     std::cout << "Test 6 passed\n";
 
-    // Additional test cases
     result = tree.find("2001:49f0:abcd::");
     assert(result.first == 200 && result.second == 32);
     std::cout << "Test 7 passed\n";
