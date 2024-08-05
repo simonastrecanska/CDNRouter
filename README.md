@@ -19,7 +19,7 @@ git clone https://github.com/simonastrecanska/CDNRouter.git
 
 2. Navigate to the project directory:
 ```sh
-cd src
+cd CDNRouter/src
 ```
 
 3. To compile the project, run the following command in your terminal:
